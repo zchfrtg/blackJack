@@ -1,4 +1,10 @@
-package cs.cs3750.team4.blackjack;
+package cs3750.blackjack;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -8,7 +14,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 
-public class BlackJackGame extends ApplicationAdapter {
+public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	OrthographicCamera camera;
 	Texture background;
@@ -42,3 +48,4 @@ public class BlackJackGame extends ApplicationAdapter {
 		
 	}
 }
+

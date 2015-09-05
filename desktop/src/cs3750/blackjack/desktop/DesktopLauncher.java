@@ -1,8 +1,8 @@
-package cs.cs3750.team4.blackjack.desktop;
+package cs3750.blackjack.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import cs.cs3750.team4.blackjack.BlackJackGame;
+import cs3750.blackjack.MyGdxGame;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
@@ -10,6 +10,6 @@ public class DesktopLauncher {
 		config.title = "BlackJack!";
 		config.height = 772;
 		config.width = 1286;
-		new LwjglApplication(new BlackJackGame(), config);
+		new LwjglApplication(new MyGdxGame(), config);
 	}
 }
