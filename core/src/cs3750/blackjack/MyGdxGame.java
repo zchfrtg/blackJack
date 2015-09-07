@@ -21,18 +21,17 @@ public class MyGdxGame extends ApplicationAdapter {
 	Texture background;
 	Texture cardSheet;
 	Sprite[][] cards = new Sprite[4][13];
+	Deck deck;
+	boolean deal = true;
 	
 	
 	@Override
 	public void create () {
 		background = new Texture(Gdx.files.internal("Table.png"));
 		cardSheet = new Texture(Gdx.files.internal("classic-playing-cards.png"));
-		TextureRegion[][] tmp = TextureRegion.split(cardSheet, cardSheet.getWidth()/13, cardSheet.getHeight()/4);
-		for (int i = 0; i < 4; i++){
-			for (int j = 0; j < 13; j++){
-				cards[i][j] = new Sprite(tmp[i][j]);
-			}
-		}
+		deck = new Deck(cardSheet);
+		deck.Shuffle();
+		//deck.listCards();
 		
 		System.out.println(background.getWidth() + " " + background.getHeight());
 		camera = new OrthographicCamera();
@@ -53,10 +52,13 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch.begin();
 		batch.draw(background, 0, 0);
 		//Temp
-		cards[1][12].setPosition(593, 140);
-		cards[1][11].setPosition(693, 140);
-		cards[1][12].draw(batch);
-		cards[1][11].draw(batch);
+		if(deal){
+			deck.dealCard(593, 140);
+			deck.dealCard(693, 140);
+			deck.listCardsInPlay();
+			deal = false;
+		}
+		deck.draw(batch);
 		//end Temp
 		batch.end();
 	}
